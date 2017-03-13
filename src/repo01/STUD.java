@@ -1,3 +1,6 @@
+package repo01;
+import java.util.ArrayList;
+
 
 public class STUD {
 
@@ -10,11 +13,28 @@ for(int i=0 ;i<3;i++){
 	}
 	class Student{
 		private  String name,id,email;
+		private ArrayList<Course>courseList; 
 		 public  Student(String name1,String id1,String email1){
 		name= name1;
 		id =id1;
 		email =email1;
+		courseList = new ArrayList<Course>();
 		}
+		 public void addCourse(Course course){
+			 courseList.add(course);
+		 }
+		 class Course{
+			 private String cousName,cousid,cousRoom;
+			 private static int count=0;
+			 public Course(String name,String id){
+				 cousName=name;
+				 cousid=id;
+				 count++;
+			 }
+			 public static int getCount(){
+				 return count;
+			 }
+		 }
 		 public void setname(String name2){
 			
 			 name=name2;
